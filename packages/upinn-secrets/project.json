@@ -1,0 +1,73 @@
+{
+  "name": "upinn-secrets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/upinn-secrets",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/upinn-secrets",
+        "tsConfig": "packages/upinn-secrets/tsconfig.json",
+        "packageJson": "packages/upinn-secrets/package.json",
+        "main": "packages/upinn-secrets/index.d.ts",
+        "assets": [
+          "packages/upinn-secrets/*.md",
+          "packages/upinn-secrets/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/upinn-secrets/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "node tools/scripts/build-finish.ts upinn-secrets"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "{workspaceRoot}/dist/packages/upinn-secrets"
+      ],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx g @nativescript/plugin-tools:focus-packages upinn-secrets"
+        ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/upinn-secrets/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

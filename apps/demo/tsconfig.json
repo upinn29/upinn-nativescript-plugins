@@ -15,6 +15,9 @@
       ],
       "@upinn/*": [
         "../../packages/*"
+      ],
+      "@upinn/upinn-secrets": [
+        "../../packages/upinn-secrets/index.d.ts"
       ]
     }
   }

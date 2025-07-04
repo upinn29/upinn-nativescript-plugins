@@ -5,7 +5,7 @@ npm run setup
 npm start
 ```
 
-- @upinn
+- [@upinn/upinn-secrets](packages/upinn-secrets/README.md)
 
 # How to use?
 

@@ -1,0 +1,14 @@
+dependencies {
+	implementation 'androidx.multidex:multidex:2.0.1'
+  	implementation 'upinn.tech:upinnsecretsandroid:1.0.4'
+}
+
+android{
+    compileSdkVersion 35
+    buildToolsVersion "35"
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 35
+    }
+}
+

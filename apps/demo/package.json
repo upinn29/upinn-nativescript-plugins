@@ -4,7 +4,8 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "dependencies": {
-    "@nativescript/core": "*"
+    "@nativescript/core": "*",
+    "@upinn/upinn-secrets": "file:../../packages/upinn-secrets"
   },
   "devDependencies": {
     "@nativescript/android": "~8.9.0",

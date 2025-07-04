@@ -43,7 +43,14 @@ module.exports = {
     // packages
     // build output is always in dist/packages
     '@upinn': {
-      'build-all': {
+      // @upinn/upinn-secrets
+			'upinn-secrets': {
+				build: {
+					script: 'nx run upinn-secrets:build.all',
+					description: '@upinn/upinn-secrets: Build',
+				},
+			},
+			'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
       },
@@ -53,7 +60,11 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
-      reset: {
+      'upinn-secrets': {
+				script: 'nx run upinn-secrets:focus',
+				description: 'Focus on @upinn/upinn-secrets',
+			},
+			reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },
