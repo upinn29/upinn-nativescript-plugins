@@ -16,7 +16,7 @@ export class UpinnSecrets extends UpinnSecretsCommon {
     }
 
     public get_secret(secret_name: string, secret_version?: string): string | number {
-        let resSecret = this.upinnSecrets.getSecretWithVariableVersion("NEW_SECRET_KEY", "1");
+        let resSecret = this.upinnSecrets.getSecretWithVariableVersion(secret_name, secret_version);
         return resSecret && !isNaN(Number(resSecret)) ? Number(resSecret) : resSecret;
     }
 }
