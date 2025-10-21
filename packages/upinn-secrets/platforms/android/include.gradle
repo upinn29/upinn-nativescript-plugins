@@ -1,6 +1,6 @@
 dependencies {
 	implementation 'androidx.multidex:multidex:2.0.1'
-  	implementation 'upinn.tech:upinnsecretsandroid:1.0.6'
+  	implementation 'upinn.tech:upinnsecretsandroid:1.0.7'
 }
 
 android{
